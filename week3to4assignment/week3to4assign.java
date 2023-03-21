@@ -196,4 +196,36 @@ public class week3to4assign {
 		return cocktail;
 
 	}
+//		My updated version after studying week 4 using map instead of array.
+//		a little longer code but i think it works  better.
+//	
+//	
+	
+	public static boolean cockTailselection(Map<String, String> cocktails) {
+		Scanner sc = new Scanner(System.in);
+		boolean quit = false;		
+		String input;
+		while (!quit) {
+			System.out.println("Enter the cocktail you would like to make ( or 0 to go back)");
+			for (String key : cocktails.keySet()) {
+				System.out.println("- " + key);
+			}			
+			input = sc.nextLine();
+	            if (input.equals("0")) {
+	                quit = true;
+			} else if (cocktails.containsKey(input)) {
+				System.out.println("To make a " + input + ": " + "\n" + "****************"  + cocktails.get(input) + "\r" + "****************");
+			} else {
+				System.out.println("Invalid key. Please try again.");
+			}
+
+		}		
+		return quit;
+	}
+	
+	
+	
+	
+	
+	
 }
