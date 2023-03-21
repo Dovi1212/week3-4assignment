@@ -160,11 +160,40 @@ public class week3to4assign {
 			return false;
 		}
 	}
+
 	public static boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) {
 		if (isHotOutside == true && moneyInPocket > 10.5) {
 			return true;
 		} else {
 			return false;
 		}
+	}
+	// 13. Create a method of your own that solves a problem. In comments, write
+	// what the method does and why you created it.
+
+//This is a method i created for a sub menu, after selecting a spirit type this method	
+//		pulls an array of cocktails that can be made with that spirit with the option of
+//		going back to the initial selection or selecting one to see the recepie. (I'm a Bartender)
+//I created it in a project im doing to practice the skills im learning	
+	public static int CocktailSelection(int selection, String[] cocktails) {
+		int cocktail = 0;
+		while (cocktail == 0) {
+			System.out.println("Choose a cocktail.");
+			{
+				for (int i = 0; i < cocktails.length; i++) {
+					System.out.println(i + 1 + ")" + cocktails[i]);
+
+				}
+				System.out.println(cocktails.length + 1 + ")Back");
+				cocktail = sc.nextInt();
+				if (cocktail < 0 && cocktail > cocktails.length + 1) {
+					cocktail = 0;
+					System.out.println("Please select a valid option.");
+					cocktail = sc.nextInt();
+				}
+			}
+		}
+		return cocktail;
+
 	}
 }
