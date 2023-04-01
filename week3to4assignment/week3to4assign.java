@@ -175,25 +175,25 @@ public class week3to4assign {
 //		pulls an array of cocktails that can be made with that spirit with the option of
 //		going back to the initial selection or selecting one to see the recepie. (I'm a Bartender)
 //I created it in a project im doing to practice the skills im learning	
-	public static int CocktailSelection(int selection, String[] cocktails) {
-		int cocktail = 0;
-		while (cocktail == 0) {
-			System.out.println("Choose a cocktail.");
-			{
-				for (int i = 0; i < cocktails.length; i++) {
-					System.out.println(i + 1 + ")" + cocktails[i]);
-
-				}
-				System.out.println(cocktails.length + 1 + ")Back");
-				cocktail = sc.nextInt();
-				if (cocktail < 0 && cocktail > cocktails.length + 1) {
-					cocktail = 0;
-					System.out.println("Please select a valid option.");
-					cocktail = sc.nextInt();
-				}
-			}
-		}
-		return cocktail;
+//	public static int CocktailSelection(int selection, String[] cocktails) {
+//		int cocktail = 0;
+//		while (cocktail == 0) {
+//			System.out.println("Choose a cocktail.");
+//			{
+//				for (int i = 0; i < cocktails.length; i++) {
+//					System.out.println(i + 1 + ")" + cocktails[i]);
+//
+//				}
+//				System.out.println(cocktails.length + 1 + ")Back");
+//				cocktail = sc.nextInt();
+//				if (cocktail < 0 && cocktail > cocktails.length + 1) {
+//					cocktail = 0;
+//					System.out.println("Please select a valid option.");
+//					cocktail = sc.nextInt();
+//				}
+//			}
+//		}
+//		return cocktail;
 
 	}
 //		My updated version after studying week 4 using map instead of array.
@@ -201,31 +201,31 @@ public class week3to4assign {
 //	
 //	
 	
-	public static boolean cockTailselection(Map<String, String> cocktails) {
-		Scanner sc = new Scanner(System.in);
-		boolean quit = false;		
-		String input;
-		while (!quit) {
-			System.out.println("Enter the cocktail you would like to make ( or 0 to go back)");
-			for (String key : cocktails.keySet()) {
-				System.out.println("- " + key);
-			}			
-			input = sc.nextLine();
-	            if (input.equals("0")) {
-	                quit = true;
-			} else if (cocktails.containsKey(input)) {
-				System.out.println("To make a " + input + ": " + "\n" + "****************"  + cocktails.get(input) + "\r" + "****************");
-			} else {
-				System.out.println("Invalid key. Please try again.");
-			}
+//	public static boolean cockTailselection(Map<String, String> cocktails) {
+//		Scanner sc = new Scanner(System.in);
+//		boolean quit = false;		
+//		String input;
+//		while (!quit) {
+//			System.out.println("Enter the cocktail you would like to make ( or 0 to go back)");
+//			for (String key : cocktails.keySet()) {
+//				System.out.println("- " + key);
+//			}			
+//			input = sc.nextLine();
+//	            if (input.equals("0")) {
+//	                quit = true;
+//			} else if (cocktails.containsKey(input)) {
+//				System.out.println("To make a " + input + ": " + "\n" + "****************"  + cocktails.get(input) + "\r" + "****************");
+//			} else {
+//				System.out.println("Invalid key. Please try again.");
+//			}
+//
+//		}		
+//		return quit;
+//	}
+	
+	
+	
+	
+	
+	
 
-		}		
-		return quit;
-	}
-	
-	
-	
-	
-	
-	
-}
